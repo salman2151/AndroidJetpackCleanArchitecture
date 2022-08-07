@@ -11,7 +11,9 @@ import com.example.nytimescleanarchitecture.R
 import com.example.nytimescleanarchitecture.databinding.LoginFragmentBinding
 import com.example.nytimescleanarchitecture.presentation.fragment.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -30,7 +32,7 @@ class LoginFragment : BaseFragment() {
             itBinding.lifecycleOwner = this
             itBinding.viewModel = viewModel
             lifecycleScope.launch {
-                viewModel.loginStateFlow.collectLatest {
+                viewModel.loginStateFlow.collect {
                     when {
                         it.isLoading -> {
                             setViewVisibility(pbLoadingVisibility = View.VISIBLE)
