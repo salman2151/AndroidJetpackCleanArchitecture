@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="popularArticleDto"
+            type="com.example.nytimescleanarchitecture.domain.model.PopularArticleDto" />
+    </data>
+
+    <!--    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/rcv_item_bg"
+        android:elevation="5dp"
+        android:padding="@dimen/padding_rcv_item">
+
+        <ImageView
+            android:id="@+id/tvFirstAlphabet"
+            style="@style/rcvFirstAlphabetStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle"
+          android:src="@mipmap/ic_launcher_foreground"
+            tools:ignore="ContentDescription"
+            tools:text="T" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/rcvItemTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{popularArticleDto.title}"
+            app:layout_constraintEnd_toStartOf="@+id/imvArrowNext"
+            app:layout_constraintStart_toEndOf="@+id/tvFirstAlphabet"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A Large Object Landed on His Sheep Farm. It Came From Space." />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            style="@style/rcvItemDescriptionStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{popularArticleDto.description}"
+            app:layout_constraintEnd_toEndOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            tools:text="“It’s not something you see every day on a sheep farm,” a farmer said of the pieces of debris that wound up in rural Australia. They are thought to be from a SpaceX spacecraft." />
+
+        <ImageView
+            android:id="@+id/imvArrowNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{popularArticleDto.byLine}"
+            android:textColor="@color/purple_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            tools:text="By Mike Ives and Jenny Gross" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    </RelativeLayout>-->
+</layout>
