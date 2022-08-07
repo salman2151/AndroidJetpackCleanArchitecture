@@ -7,7 +7,7 @@ data class PopularArticleResponseDataDto(
 
   @SerializedName("uri") var uri: String? = null,
   @SerializedName("url") var url: String? = null,
-  @SerializedName("id") var id: Long? = null,
+  @SerializedName("id") var id: Long,
   @SerializedName("asset_id") var assetId: Long? = null,
   @SerializedName("source") var source: String? = null,
   @SerializedName("published_date") var publishedDate: String? = null,

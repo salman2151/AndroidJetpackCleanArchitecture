@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/NyTimesApp/app/src/main/res/layout/article_list_fragment.xml" value="0.14479166666666668" />
+        <entry key="..\:/Projects/NyTimesApp/app/src/main/res/layout/item_article.xml" value="0.3578125" />
         <entry key="..\:/Projects/NyTimesCleanArchitecture/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1955" />
         <entry key="..\:/Projects/NyTimesCleanArchitecture/app/src/main/res/drawable/cl_bg_elevation.xml" value="0.2995" />
         <entry key="..\:/Projects/NyTimesCleanArchitecture/app/src/main/res/drawable/rcv_imv_item_bg.xml" value="0.2995" />

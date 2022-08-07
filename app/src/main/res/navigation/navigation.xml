@@ -22,6 +22,16 @@
         android:id="@+id/articleListFragment"
         android:name="com.example.nytimescleanarchitecture.presentation.fragment.article.ArticleListFragment"
         android:label="article_list_fragment"
-        tools:layout="@layout/article_list_fragment" />
+        tools:layout="@layout/article_list_fragment" >
+        <action
+            android:id="@+id/action_articleListFragment_to_emptyFragment"
+            app:destination="@id/emptyFragment" />
+    </fragment>
 
+
+    <fragment
+        android:id="@+id/emptyFragment"
+        android:name="com.example.nytimescleanarchitecture.presentation.fragment.empty.EmptyFragment"
+        android:label="empty fragment"
+        tools:layout="@layout/empty_fragment" />
 </navigation>

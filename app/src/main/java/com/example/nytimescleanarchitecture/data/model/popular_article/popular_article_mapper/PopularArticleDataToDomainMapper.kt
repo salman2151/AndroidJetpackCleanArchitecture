@@ -9,6 +9,7 @@ class PopularArticleDataToDomainMapper :
 
     override fun mapDataToDomainObject(obj: PopularArticleResponseDataDto): PopularArticleDto {
         return PopularArticleDto(
+            id = obj.id,
             title = obj.title ?: "No Title",
             description = obj.abstract ?: "No Description",
             byLine = obj.byline ?: "No by line"
