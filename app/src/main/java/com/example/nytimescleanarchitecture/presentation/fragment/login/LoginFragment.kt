@@ -1,6 +1,8 @@
 package com.example.nytimescleanarchitecture.presentation.fragment.login
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -11,9 +13,9 @@ import com.example.nytimescleanarchitecture.R
 import com.example.nytimescleanarchitecture.databinding.LoginFragmentBinding
 import com.example.nytimescleanarchitecture.presentation.fragment.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -32,7 +34,7 @@ class LoginFragment : BaseFragment() {
             itBinding.lifecycleOwner = this
             itBinding.viewModel = viewModel
             lifecycleScope.launch {
-                viewModel.loginStateFlow.collect {
+                viewModel.loginStateFlow.collectLatest {
                     when {
                         it.isLoading -> {
                             setViewVisibility(pbLoadingVisibility = View.VISIBLE)
@@ -43,12 +45,14 @@ class LoginFragment : BaseFragment() {
                         }
                         else -> {
                             setViewVisibility(pbLoadingVisibility = View.GONE)
-                            if (it.userDto != null)
+                            if (it.userDto != null) {
                                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToArticleListFragment())
+                            }
                         }
                     }
                 }
             }
+
         }
     }
 
