@@ -11,7 +11,7 @@ import javax.inject.Singleton
 class PopularArticleRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ) : PopularArticleRepository {
-    override suspend fun getMostViewedArticles(): PopularArticleResponse {
-        return apiService.getMostViewedArticles()
+    override suspend fun getMostPopularArticles(): PopularArticleResponse {
+        return apiService.getMostPopularArticles()
     }
 }

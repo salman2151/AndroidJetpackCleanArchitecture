@@ -15,7 +15,7 @@ class GetMostPopularArticlesListUseCase @Inject constructor(private val popularA
         flow {
             try {
                 emit(NetworkResponse.Loading())
-                val response = popularArticleRepository.getMostViewedArticles()
+                val response = popularArticleRepository.getMostPopularArticles()
                 val list: List<PopularArticleDto> = if (response.results.isNullOrEmpty().not())
                     response.results.map {
                         PopularArticleDataToDomainMapper().mapDataToDomainObject(it)

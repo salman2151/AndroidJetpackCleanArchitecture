@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("mostpopular/v2/mostviewed/all-sections/7.json?api-key=${BuildConfig.API_KEY}")
-    suspend fun getMostViewedArticles(): PopularArticleResponse
+    suspend fun getMostPopularArticles(): PopularArticleResponse
 }
