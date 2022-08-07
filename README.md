@@ -6,6 +6,4 @@
 3. Checkout to develop branch.
 4. After successful sync.
 5. Run the app
-6. Enter Credentials on login screen:
-   username: Salman2151
-   password: Qwe123
+6. Enter Credentials on login screen: \n username: Salman2151 \n password: Qwe123
