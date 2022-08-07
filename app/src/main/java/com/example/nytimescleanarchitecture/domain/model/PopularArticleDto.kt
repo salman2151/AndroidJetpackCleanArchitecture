@@ -5,4 +5,5 @@ data class PopularArticleDto(
     val title: String,
     val description: String?,
     val byLine: String?,
+    val url:String
 )

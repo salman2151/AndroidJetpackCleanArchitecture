@@ -1,6 +1,8 @@
 package com.example.nytimescleanarchitecture.presentation.fragment.article
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -31,7 +33,8 @@ class ArticleListFragment : BaseFragment() {
 
     private fun onItemClickCallback(popularArticleDto: PopularArticleDto) {
         //Toast.makeText(context, popularArticleDto.title, Toast.LENGTH_SHORT).show()
-        findNavController().navigate(ArticleListFragmentDirections.actionArticleListFragmentToEmptyFragment())
+//        findNavController().navigate(ArticleListFragmentDirections.actionArticleListFragmentToEmptyFragment())
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(popularArticleDto.url)))
     }
 
     private fun setAdapter(list: List<PopularArticleDto>) {

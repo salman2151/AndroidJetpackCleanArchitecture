@@ -12,7 +12,8 @@ class PopularArticleDataToDomainMapper :
             id = obj.id,
             title = obj.title ?: "No Title",
             description = obj.abstract ?: "No Description",
-            byLine = obj.byline ?: "No by line"
+            byLine = obj.byline ?: "No by line",
+            url = obj.url ?: ""
         )
     }
 }
