@@ -8,10 +8,10 @@ import androidx.room.PrimaryKey
 data class UserDto (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "user_id")
-    val id:Long,
+    val id:Long =0,
     @ColumnInfo(name = "user_name")
     val userName:String,
     @ColumnInfo(name = "password")
-    val password:Long,
+    val password:String,
 
     )

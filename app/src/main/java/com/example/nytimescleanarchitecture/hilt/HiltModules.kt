@@ -66,8 +66,8 @@ object HiltModules {
         return Room.databaseBuilder(
             appContext,
             NyTimesDatabase::class.java,
-            "RssReader"
-        ).build()
+            "NyTimesDatabase"
+        ).allowMainThreadQueries().build()
     }
 
     @Provides
