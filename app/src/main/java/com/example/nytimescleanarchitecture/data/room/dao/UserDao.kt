@@ -13,5 +13,5 @@ interface UserDao {
     fun insert(userDto: UserDto): Long?
 
     @Query("SELECT * FROM tbl_user WHERE user_name LIKE :userName AND password LIKE :password")
-    fun getLoginUser(userName: String, password: String): UserDto
+    fun getLoginUser(userName: String, password: String): UserDto?
 }

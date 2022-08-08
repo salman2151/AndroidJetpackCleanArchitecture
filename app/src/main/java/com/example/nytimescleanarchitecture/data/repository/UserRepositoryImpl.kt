@@ -10,7 +10,7 @@ class UserRepositoryImpl @Inject constructor(private val userDao: UserDao) : Use
         return userDao.insert(userDto)
     }
 
-    override suspend fun loginUser(userName: String, password: String): UserDto {
+    override suspend fun loginUser(userName: String, password: String): UserDto? {
         return userDao.getLoginUser(userName, password)
     }
 }
